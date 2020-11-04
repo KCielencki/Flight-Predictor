@@ -1,0 +1,122 @@
+<html lang="eng">
+
+<head>
+    <!-- Bootswatch -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/spacelab/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/"><b>Predicting Airline Prices</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/predictor">Price Predictor</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/visualizations">Visualizations<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/methodology">Methodology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center p-3 my-3">
+            <h2><b>Flight Price Trends and Geographical Breakout</b></h2>
+        </div>
+        <div class="row justify-content-sml-left p-3 my-3">
+            <p>
+                This Dashboard provides historical data on travel prices throughout the last 3 years to help gauge how much does usually cost to travel to a specific destination. The time range is also segmented in Quarters, which provides more visibility to the user
+                as to when tickets more expensive from prior years.
+                <br>
+                <br>The map provides an overall view of how much it cost to travel to a specific States. Prices will change when utilizing the filters.
+                <br>
+                <br>The bar graph shows the most affordable destination cities to travel to. Prices will also change when utilizing the filters.
+                <br>
+                <br>The optional filters allow the user to select <i style="color:red; font-size: small;">(It is advised to utilize all filters to reach an accurate price)</i>:
+            </p>
+            <ul>
+                <li>City</li>
+                <li>Airport</li>
+                <li>State</li>
+                <li>City</li>
+                <li>Destination City</li>
+                <li>Options to include specific years/quarters to their price results</li>
+            </ul>
+        </div>
+        <div class='tableauPlaceholder' id='viz1599789513493' style='position: center'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirfareDashboard&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AirfareDashboard&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirfareDashboard&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1599789513493');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1450px';
+                vizElement.style.height = '887px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1450px';
+                vizElement.style.height = '887px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '1327px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+        <div class="row justify-content-md-center p-3 my-3">
+            <h2><b>Q1 Flight Analysis</b></h2>
+        </div>
+        <div class="row justify-content-sml-left p-3 my-3">
+            <p>
+                The Second Dashboard shows most traveled cities and states across the U.S. in Q1 2020.
+                <br>
+                <br>If a user wants to travel to a place with a limited range of travelers due to COVID, and select a destination within a price range they could utilize this dashboard to narrow their search.
+                <br>
+                <br>The optional filters allow the user to:
+            </p>
+        </div>
+        <div class="row justify-content-sml-left p-3 my-3">
+            <ul>
+                <li>Limit the number of travelers per destination</li>
+                <li>Choose a desired state that they would like to travel to</li>
+                <li>Set a specific price range</li>
+                <li>And select an origin city for more accurate prices</li>
+            </ul>
+        </div>
+        <div class='tableauPlaceholder' id='viz1599932007101' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirfareDashboard2&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AirfareDashboard2&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirfareDashboard2&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1599932007101');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1300px';
+                vizElement.style.minHeight = '587px';
+                vizElement.style.maxHeight = '887px';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1300px';
+                vizElement.style.minHeight = '587px';
+                vizElement.style.maxHeight = '887px';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '1177px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+    <footer>
+        <p>Authors: Luis Cerilla, Arthur Edwards, Ahasan Hossain, Kyle Cielencki<br>
+    </footer>
+</body>

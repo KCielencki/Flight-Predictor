@@ -1,0 +1,101 @@
+<html lang="eng">
+
+<head>
+    <!-- Bootswatch -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/spacelab/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/"><b>Predicting Airline Prices</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/predictor">Price Predictor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/visualizations">Visualizations</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/methodology">Methodology<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid p-3 my-3">
+        <div class="row justify-content-md-center">
+            <h2><b>About the Predictor</b></h2>
+        </div>
+        <div class="row justify-content-md-left p-3 my-3">
+            <h6><b>1. Data Gathering</b></h6>
+            <p>
+                The data used in this app is from the
+                <a href="https://www.transtats.bts.gov/Tables.asp?DB_ID=125&DB_Name=Airline%20Origin%20and%20Destination%20Survey%20%28DB1B%29&DB_Short_Name=Origin%20and%20Destination%20Survey" target="_blank">Bureau of Transportation Statistics</a> Airline
+                Origin and Destination Survey ("DB1BCoupon" and "DB1BTicket" tables).
+                <br>
+                <br>To make more meaningful data visualizations, we included the airport names, city names and coordinates (latitude, longitude). This required finding an appropriate
+                <a href="https://www.kaggle.com/aravindram11/list-of-us-airports" target="_blank">dataset</a> that contained these fields. We then joined this data to the BTS data using Python Pandas library.
+                <br>
+                <br>We based our visualizations on a random 5% sample of the last three years of data. This data was combined with an airport city, latitiude and longitude for better visualizations. These can be found on the "Visualizations" page.
+                <br>
+                <br> Our flight price prediction model used a random 5% sample of Q1 2020 data from above. Our model is based on the most recent quarter as this most accurately reflects the current travel environment. Our model is based on Origin, Destination,
+                Distance, Operating Carrier, Quarter, and Passenger Numbers. We used a "linear regression" model using these inputs as we noticed a higher correlation between these and flight ticket price.
+                <br>
+                <br>For data cleanup, there were fortunately not any N/As to begin with. However, we did notice some itineraries with well over 100 tickets (a Boeing 747 has 276-467 seats). We narrowed our dataset to exclude any itineraries with less
+                than 100 tickets. Additionally, there were some itineraries that cost as much as $20,000. We excluded any itineraries that cost more than $2,000.
+            </p>
+        </div>
+        <div class="row justify-content-md-left p-3 my-3">
+            <h6><b>2. Data Exploration</b></h6>
+        </div>
+        <div class="row justify-content-md-left p-3 my-3">
+            <p>
+                To understand how the data is distributed, we used Seaborn library's distplot( ) function on a some of the data features:
+            </p>
+            <ul>
+                <li><b>Number of tickets ordered:</b>
+                    <br><img src="static/Pictures/NumberOfTixPlot.png">
+                    <br>Most customers purchased only one ticket per itinerary. There were some outliers in which there were 100+ tickets ordered. We limited our dataset to tickets with passengers less than 100 (instances with 50+ were left in as they
+                    did not bring down the "Price per ticket").
+                </li>
+                <br>
+                <li><b>Miles flown:</b>
+                    <br><img src="static/Pictures/MilesFlownPlot.png">
+                    <br>The median flight distance flown is ~874 miles (roughly the distance between Minneapolis and Denver). The vast majority of values fall under 2,000 miles; however, there were some outliers in the 3,000-5,000+ miles traveled range.
+                </li>
+                <br>
+                <li><b>Ticket prices:</b>
+                    <br><img src="static/Pictures/TixPricePlot.png">
+                    <br>The median price per passenger is ~$451. The vast majority of prices fall under $1,000 with a number of outliers.
+                </li>
+            </ul>
+        </div>
+        <div class="row justify-content-md-left p-3 my-3">
+            <h6><b>3. Machine Learning</b></h6>
+            <p>
+                After cleaning the data, we ended up with 32 columns and 3,267 rows. As a preliminary analysis, we looked into correlations between our target, the "Fare" column. Our dataset had a number of columns with a correlation of >5.6%. We attempted a number of
+                machine learning models and based on our analysis, the Random Forest model as it appeared to be more accurate with a reasonable r2.
+            </p>
+        </div>
+        <div class="row justify-content-md-left p-3 my-3">
+            <h6><b><a href="/predictor">4. Try it out yourself!</a></b></h6>
+            <br>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>Authors: Luis Cerilla, Arthur Edwards, Ahasan Hossain, Kyle Cielencki<br>
+    </footer>
+</body>
+
+</html>
